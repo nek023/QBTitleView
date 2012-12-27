@@ -18,6 +18,9 @@
 		F4450E87168C277F0076668C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4450E86168C277F0076668C /* Default-568h@2x.png */; };
 		F4450E8A168C277F0076668C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4450E88168C277F0076668C /* MainStoryboard.storyboard */; };
 		F4450E8D168C277F0076668C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4450E8C168C277F0076668C /* ViewController.m */; };
+		F4450E97168C27D50076668C /* QBTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4450E96168C27D50076668C /* QBTitleView.m */; };
+		F4450E99168C28DC0076668C /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F4450E98168C28DC0076668C /* profile.png */; };
+		F4450E9B168C37510076668C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4450E9A168C37510076668C /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		F4450E89168C277F0076668C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F4450E8B168C277F0076668C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F4450E8C168C277F0076668C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F4450E95168C27D50076668C /* QBTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBTitleView.h; sourceTree = "<group>"; };
+		F4450E96168C27D50076668C /* QBTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBTitleView.m; sourceTree = "<group>"; };
+		F4450E98168C28DC0076668C /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		F4450E9A168C37510076668C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4450E9B168C37510076668C /* QuartzCore.framework in Frameworks */,
 				F4450E71168C277F0076668C /* UIKit.framework in Frameworks */,
 				F4450E73168C277F0076668C /* Foundation.framework in Frameworks */,
 				F4450E75168C277F0076668C /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +81,7 @@
 		F4450E6F168C277F0076668C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4450E9A168C37510076668C /* QuartzCore.framework */,
 				F4450E70168C277F0076668C /* UIKit.framework */,
 				F4450E72168C277F0076668C /* Foundation.framework */,
 				F4450E74168C277F0076668C /* CoreGraphics.framework */,
@@ -83,11 +92,13 @@
 		F4450E76168C277F0076668C /* QBTitleView */ = {
 			isa = PBXGroup;
 			children = (
+				F4450E94168C27C70076668C /* Classes */,
 				F4450E7F168C277F0076668C /* AppDelegate.h */,
 				F4450E80168C277F0076668C /* AppDelegate.m */,
 				F4450E88168C277F0076668C /* MainStoryboard.storyboard */,
 				F4450E8B168C277F0076668C /* ViewController.h */,
 				F4450E8C168C277F0076668C /* ViewController.m */,
+				F4450E98168C28DC0076668C /* profile.png */,
 				F4450E77168C277F0076668C /* Supporting Files */,
 			);
 			path = QBTitleView;
@@ -105,6 +116,15 @@
 				F4450E86168C277F0076668C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4450E94168C27C70076668C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F4450E95168C27D50076668C /* QBTitleView.h */,
+				F4450E96168C27D50076668C /* QBTitleView.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +183,7 @@
 				F4450E85168C277F0076668C /* Default@2x.png in Resources */,
 				F4450E87168C277F0076668C /* Default-568h@2x.png in Resources */,
 				F4450E8A168C277F0076668C /* MainStoryboard.storyboard in Resources */,
+				F4450E99168C28DC0076668C /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +197,7 @@
 				F4450E7D168C277F0076668C /* main.m in Sources */,
 				F4450E81168C277F0076668C /* AppDelegate.m in Sources */,
 				F4450E8D168C277F0076668C /* ViewController.m in Sources */,
+				F4450E97168C27D50076668C /* QBTitleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

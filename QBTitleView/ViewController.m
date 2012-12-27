@@ -8,22 +8,47 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // タイトルビューをセット
+    QBTitleView *titleView = [[QBTitleView alloc] initWithFrame:CGRectMake(0, 0, 170, 44)];
+    titleView.delegate = self;
+    titleView.image = [UIImage imageNamed:@"profile.png"];
+    titleView.title = @"Title";
+    
+    self.navigationItem.titleView = titleView;
+    
+    self.titleView = titleView;
+    [titleView release];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)dealloc {
+    [_textField release];
+    [_titleView release];
+    
+    [super dealloc];
+}
+
+
+#pragma mark - QBTitleViewDelegate
+
+- (void)titleViewDidTouchUp:(QBTitleView *)titleView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"Pushed");
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    self.titleView.title = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    return YES;
 }
 
 @end

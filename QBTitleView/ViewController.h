@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "QBTitleView.h"
+
+@interface ViewController : UIViewController <QBTitleViewDelegate, UITextFieldDelegate>
+
+@property (nonatomic, retain) IBOutlet UITextField *textField;
+@property (nonatomic, retain) QBTitleView *titleView;
 
 @end
