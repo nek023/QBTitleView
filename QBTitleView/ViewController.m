@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+// Categories
+#import "UIImage+tintedImage.h"
+
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -18,7 +21,8 @@
     QBTitleView *titleView = [[QBTitleView alloc] initWithFrame:CGRectMake(0, 0, 170, 44)];
     titleView.delegate = self;
     titleView.image = [UIImage imageNamed:@"profile.png"];
-    titleView.title = @"Title";
+    titleView.highlightedImage = [[UIImage imageNamed:@"profile.png"] tintedImageUsingColor:[UIColor colorWithWhite:0.2 alpha:0.5]];
+    titleView.title = @"QBTitleView";
     
     self.navigationItem.titleView = titleView;
     
@@ -36,7 +40,7 @@
 
 #pragma mark - QBTitleViewDelegate
 
-- (void)titleViewDidTouchUp:(QBTitleView *)titleView
+- (void)titleViewDidTouchUpInside:(QBTitleView *)titleView
 {
     NSLog(@"Pushed");
 }

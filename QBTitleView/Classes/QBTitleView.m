@@ -37,7 +37,8 @@
         imageView.clipsToBounds = YES;
         imageView.layer.cornerRadius = 4.0;
         imageView.layer.borderWidth = 1.0;
-        imageView.layer.borderColor = [[UIColor colorWithWhite:0.26 alpha:1.0] CGColor];
+        imageView.layer.masksToBounds = YES;
+        imageView.layer.borderColor = [[UIColor colorWithWhite:0.35 alpha:1.0] CGColor];
         
         [baseButton addSubview:imageView];
         self.imageView = imageView;
@@ -47,7 +48,7 @@
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         titleLabel.font = [UIFont boldSystemFontOfSize:20];
         titleLabel.textColor = [UIColor whiteColor];
-        titleLabel.highlightedTextColor = [UIColor colorWithWhite:0.8 alpha:1.0];
+        titleLabel.highlightedTextColor = [UIColor colorWithWhite:0.7 alpha:1.0];
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.5];
@@ -82,6 +83,16 @@
     return self.imageView.image;
 }
 
+- (void)setHighlightedImage:(UIImage *)highlightedImage
+{
+    self.imageView.highlightedImage = highlightedImage;
+}
+
+- (UIImage *)highlightedImage
+{
+    return self.imageView.highlightedImage;
+}
+
 - (void)setTitle:(NSString *)title
 {
     self.titleLabel.text = title;
@@ -106,7 +117,7 @@
 - (void)redraw
 {
     CGSize imageViewSize = CGSizeMake(30, 30);
-    CGFloat margin = 5;
+    CGFloat margin = 6;
     
     CGSize actualTitleSize = [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20] forWidth:self.bounds.size.width lineBreakMode:NSLineBreakByTruncatingTail];
     
@@ -138,10 +149,6 @@
 {
     self.highlighted = NO;
     
-    if([self.delegate respondsToSelector:@selector(titleViewDidTouchUp:)]) {
-        [self.delegate titleViewDidTouchUp:self];
-    }
-    
     if([self.delegate respondsToSelector:@selector(titleViewDidTouchUpInside:)]) {
         [self.delegate titleViewDidTouchUpInside:self];
     }
@@ -150,10 +157,6 @@
 - (void)touchedUpOutside:(id)sender
 {
     self.highlighted = NO;
-    
-    if([self.delegate respondsToSelector:@selector(titleViewDidTouchUp:)]) {
-        [self.delegate titleViewDidTouchUp:self];
-    }
     
     if([self.delegate respondsToSelector:@selector(titleViewDidTouchUpOutside:)]) {
         [self.delegate titleViewDidTouchUpOutside:self];

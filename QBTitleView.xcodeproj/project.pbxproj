@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA36F08316A83E200048659F /* UIImage+tintedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AA36F08216A83E200048659F /* UIImage+tintedImage.m */; };
 		F4450E71168C277F0076668C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4450E70168C277F0076668C /* UIKit.framework */; };
 		F4450E73168C277F0076668C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4450E72168C277F0076668C /* Foundation.framework */; };
 		F4450E75168C277F0076668C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4450E74168C277F0076668C /* CoreGraphics.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA36F08116A83E200048659F /* UIImage+tintedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+tintedImage.h"; path = "Classes/UIImage+tintedImage.h"; sourceTree = "<group>"; };
+		AA36F08216A83E200048659F /* UIImage+tintedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+tintedImage.m"; path = "Classes/UIImage+tintedImage.m"; sourceTree = "<group>"; };
 		F4450E6C168C277F0076668C /* QBTitleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QBTitleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4450E70168C277F0076668C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4450E72168C277F0076668C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +99,8 @@
 				F4450E7F168C277F0076668C /* AppDelegate.h */,
 				F4450E80168C277F0076668C /* AppDelegate.m */,
 				F4450E88168C277F0076668C /* MainStoryboard.storyboard */,
+				AA36F08116A83E200048659F /* UIImage+tintedImage.h */,
+				AA36F08216A83E200048659F /* UIImage+tintedImage.m */,
 				F4450E8B168C277F0076668C /* ViewController.h */,
 				F4450E8C168C277F0076668C /* ViewController.m */,
 				F4450E98168C28DC0076668C /* profile.png */,
@@ -198,6 +203,7 @@
 				F4450E81168C277F0076668C /* AppDelegate.m in Sources */,
 				F4450E8D168C277F0076668C /* ViewController.m in Sources */,
 				F4450E97168C27D50076668C /* QBTitleView.m in Sources */,
+				AA36F08316A83E200048659F /* UIImage+tintedImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +318,7 @@
 				F4450E92168C277F0076668C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

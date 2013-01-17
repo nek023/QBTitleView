@@ -15,7 +15,6 @@
 
 @optional
 - (void)titleViewDidTouchDown:(QBTitleView *)titleView;
-- (void)titleViewDidTouchUp:(QBTitleView *)titleView;
 - (void)titleViewDidTouchUpInside:(QBTitleView *)titleView;
 - (void)titleViewDidTouchUpOutside:(QBTitleView *)titleView;
 
@@ -27,5 +26,6 @@
 @property (nonatomic, assign) BOOL highlighted;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIImage *highlightedImage;
 
 @end
