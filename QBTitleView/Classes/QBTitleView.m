@@ -1,17 +1,20 @@
-//
-//  QBTitleView.m
-//  QBTitleViewDemo
-//
-//  Created by questbeat on 2012/12/23.
-//  Copyright (c) 2012年 Katsuma Tanaka. All rights reserved.
-//
+/*
+ Copyright (c) 2013 Katsuma Tanaka
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #import "QBTitleView.h"
 
 @interface QBTitleView ()
 
-@property (nonatomic, retain) UIImageView *imageView;
-@property (nonatomic, retain) UILabel *titleLabel;
+- (void)touchedDown:(id)sender;
+- (void)touchedUpInside:(id)sender;
+- (void)touchedUpOutside:(id)sender;
 
 @end
 
@@ -22,6 +25,10 @@
     self = [super initWithFrame:frame];
     
     if(self) {
+        // 初期化
+        self.margin = 6;
+        self.imageViewSize = CGSizeMake(30, 30);
+        
         // ボタン
         UIButton *baseButton = [UIButton buttonWithType:UIButtonTypeCustom];
         baseButton.frame = self.bounds;
@@ -59,23 +66,29 @@
         self.titleLabel = titleLabel;
         [titleLabel release];
         
-        [self redraw];
+        [self update];
     }
     
     return self;
 }
 
-- (void)dealloc
+- (void)setTitle:(NSString *)title
 {
-    [_imageView release];
-    [_titleLabel release];
+    self.titleLabel.text = title;
     
-    [super dealloc];
+    [self update];
+}
+
+- (NSString *)title
+{
+    return self.titleLabel.text;
 }
 
 - (void)setImage:(UIImage *)image
 {
     self.imageView.image = image;
+    
+    [self update];
 }
 
 - (UIImage *)image
@@ -86,23 +99,13 @@
 - (void)setHighlightedImage:(UIImage *)highlightedImage
 {
     self.imageView.highlightedImage = highlightedImage;
+    
+    [self update];
 }
 
 - (UIImage *)highlightedImage
 {
     return self.imageView.highlightedImage;
-}
-
-- (void)setTitle:(NSString *)title
-{
-    self.titleLabel.text = title;
-    
-    [self redraw];
-}
-
-- (NSString *)title
-{
-    return self.titleLabel.text;
 }
 
 - (void)setHighlighted:(BOOL)highlighted
@@ -111,13 +114,21 @@
     self.titleLabel.highlighted = highlighted;
 }
 
-
-#pragma mark - Instance Method
-
-- (void)redraw
+- (void)dealloc
 {
-    CGSize imageViewSize = CGSizeMake(30, 30);
-    CGFloat margin = 6;
+    [_imageView release];
+    [_titleLabel release];
+    
+    [super dealloc];
+}
+
+
+#pragma mark -
+
+- (void)update
+{
+    CGFloat margin = self.margin;
+    CGSize imageViewSize = (self.image && self.highlightedImage) ? self.imageViewSize : CGSizeZero;
     
     CGSize actualTitleSize = [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20] forWidth:self.bounds.size.width lineBreakMode:NSLineBreakByTruncatingTail];
     

@@ -15,4 +15,6 @@
 @property (nonatomic, retain) IBOutlet UITextField *textField;
 @property (nonatomic, retain) QBTitleView *titleView;
 
+- (IBAction)switchProfileImage:(id)sender;
+
 @end

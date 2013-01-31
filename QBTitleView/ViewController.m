@@ -38,6 +38,21 @@
 }
 
 
+#pragma mark -
+
+- (IBAction)switchProfileImage:(id)sender {
+    UISwitch *profileImageSwitch = (UISwitch *)sender;
+    
+    if(profileImageSwitch.on) {
+        self.titleView.image = [UIImage imageNamed:@"profile.png"];
+        self.titleView.highlightedImage = [[UIImage imageNamed:@"profile.png"] tintedImageUsingColor:[UIColor colorWithWhite:0.2 alpha:0.5]];
+    } else {
+        self.titleView.image = nil;
+        self.titleView.highlightedImage = nil;
+    }
+}
+
+
 #pragma mark - QBTitleViewDelegate
 
 - (void)titleViewDidTouchUpInside:(QBTitleView *)titleView

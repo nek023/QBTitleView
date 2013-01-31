@@ -64,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AAF51FC916BA756D0003903A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F4450E98168C28DC0076668C /* profile.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		F4450E61168C277F0076668C = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +111,7 @@
 				AA36F08216A83E200048659F /* UIImage+tintedImage.m */,
 				F4450E8B168C277F0076668C /* ViewController.h */,
 				F4450E8C168C277F0076668C /* ViewController.m */,
-				F4450E98168C28DC0076668C /* profile.png */,
+				AAF51FC916BA756D0003903A /* Resources */,
 				F4450E77168C277F0076668C /* Supporting Files */,
 			);
 			path = QBTitleView;
